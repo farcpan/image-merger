@@ -44,13 +44,10 @@ def main(folder, width, height, merge_width, merge_height):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Resize and merge images.")
-    parser.add_argument("--folder", type=str, required=True, help="Folder containing images")
-    parser.add_argument("--width", type=int, required=True, help="Width of each resized image")
-    parser.add_argument("--height", type=int, required=True, help="Height of each resized image")
-    parser.add_argument("--merge-width", type=int, required=True, help="Width of the merged image")
-    parser.add_argument("--merge-height", type=int, required=True, help="Height of the merged image")
-    
-    args = parser.parse_args()
-    
-    main(args.folder, args.width, args.height, args.merge_width, args.merge_height)
+    folder = input("画像が格納されたフォルダを入力してください: ").strip("'")   # シングルクォータを除外
+    width = int(input("縮小後の画像サイズ（幅）を入力してください: "))
+    height = int(input("縮小後の画像サイズ（高さ）を入力してください: "))
+    merge_width = int(input("結合後の画像サイズ（幅）を入力してください: "))
+    merge_height = int(input("結合後の画像サイズ（高さ）を入力してください: "))
+
+    main(folder, width, height, merge_width, merge_height)
